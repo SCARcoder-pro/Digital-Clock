@@ -3,10 +3,13 @@
 
 <head>
     <title>Digital Clock</title>
+    <link rel="stylesheet" href="Clock.css">
 </head>
 
 <body>
-    <div id="MyClockDisplay" onload="showTime()"></div>
+    <div class="clock-container">
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </div>
     <script>
         function showTime() {
             var date = new Date();
@@ -14,6 +17,9 @@
             var m = date.getMinutes();
             var s = date.getSeconds();
             var session = " AM";
+            var d = date.getDay();
+            var day = date.getDate();
+            var month = date.getMonth();
 
             if (h == 0) {
                 h = 12;
@@ -27,7 +33,49 @@
             m = (m < 10) ? "0" + m : m;
             s = (s < 10) ? "0" + s : s;
 
-            var time = h + ":" + m + ":" + s + "" + session;
+            if (d == 0) {
+                d = "Sunday";
+            } else if (d == 1) {
+                d = "Monday";
+            } else if (d == 2) {
+                d = "Tuesday";
+            } else if (d == 3) {
+                d = "Wednesday";
+            } else if (d == 4) {
+                d = "Thursday";
+            } else if (d == 5) {
+                d = "Friday";
+            } else if (d == 6) {
+                d = "Saturday";
+            }
+            if (month == 0) {
+                month = "January";
+            } else if (month == 1) {
+                month = "February";
+            } else if (month == 2) {
+                month = "March";
+            } else if (month == 3) {
+                month = "April";
+            } else if (month == 4) {
+                month = "May";
+            } else if (month == 5) {
+                month = "June";
+            } else if (month == 6) {
+                month = "July";
+            } else if (month == 7) {
+                month = "August";
+            } else if (month == 8) {
+                month = "September";
+            } else if (month == 9) {
+                month = "October";
+            } else if (month == 10) {
+                month = "November";
+            } else if (month == 11) {
+                month = "December";
+            }
+
+            var time = h + ":" + m + ":" + s + " " + session + "<br>" + month + " " + day + " " + d;
+
             document.getElementById("MyClockDisplay").innerHTML = time;
             setTimeout(showTime, 1000);
         }

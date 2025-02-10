@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    padding-top: 150px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    padding-left: 75px;
+    background-color: rgb(227, 227, 170);
+    color: black;
+    align-items: center;
+}
+
+.clock-container {
+    padding-top: 200px;
+    background: #77edba;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.clock {
+    color: #100101;
+    text-align: center;
+}
